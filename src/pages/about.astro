@@ -1,71 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import StatsBar from '../components/StatsBar.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
-
-const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '10+', label: 'Years Experience' },
-  { value: '99%', label: 'Client Satisfaction' },
-  { value: '24/7', label: 'Support' },
-];
 ---
-
-<BaseLayout
-  title="About Us | Brand"
-  description="Learn about our team, mission, and values."
->
+<BaseLayout title="Om oss | Arvesimulator" description="Arvesimulator er bygget av Halisonworks. Vi mener at alle familier fortjener a ta arvebeslutninger basert pa fakta.">
   <Header />
-  <main>
-    <section class="bg-primary-50 px-4 py-16 sm:px-6 lg:px-8">
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <h1 class="font-heading text-4xl font-bold text-primary-900 md:text-5xl">About Us</h1>
-        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-500">
-          We're a team dedicated to building exceptional solutions.
-        </p>
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Om Arvesimulator</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">Vi mener at alle familier fortjener a ta arvebeslutninger basert pa fakta, ikke antakelser og folelser.</p>
       </div>
     </section>
-
     <section class="px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl">
-        <h2 class="font-heading text-2xl font-bold text-primary-900">Our Story</h2>
-        <div class="mt-4 space-y-4 text-primary-600">
-          <p>TODO: Write your company story here. Share your mission, vision, and what drives your team.</p>
-          <p>TODO: Describe your approach and what makes you different from competitors.</p>
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Var historie</h2>
+        <div class="mt-4 space-y-4 text-primary-600 dark:text-primary-400">
+          <p>Nar en norsk familie skal fordele eiendommer og verdier mellom arvinger, blir samtalen fort emosjonell. Alle har ulike forventninger, og ingen kan se de faktiske tallene. Arvesimulator gir hele familien et felles, visuelt og noytral bilde som viser hvordan eiendomsverdier, inflasjon og tid pavirker hva hver arving faktisk far.</p>
+          <p>Bygget av Halisonworks, er Arvesimulator et gratis verktoy som beveger diskusjonen fra folelser til fakta. Med 5 fordelingsscenarioer, innebygd norsk arvelov (pliktdelsarv, odelsrett, dokumentavgift), og inflasjon/prisvekst-modellering, hjelper det familier a forberede seg for advokaten, ikke erstatte advokaten.</p>
         </div>
-
-        <h2 class="mt-12 font-heading text-2xl font-bold text-primary-900">Our Values</h2>
+        <h2 class="mt-12 font-heading text-2xl font-bold text-primary-900 dark:text-white">Hva driver oss</h2>
         <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <div class="rounded-lg border border-primary-200 p-6">
-            <h3 class="font-heading text-lg font-semibold text-primary-900">Innovation</h3>
-            <p class="mt-2 text-sm text-primary-500">TODO: Describe this value.</p>
-          </div>
-          <div class="rounded-lg border border-primary-200 p-6">
-            <h3 class="font-heading text-lg font-semibold text-primary-900">Quality</h3>
-            <p class="mt-2 text-sm text-primary-500">TODO: Describe this value.</p>
-          </div>
-          <div class="rounded-lg border border-primary-200 p-6">
-            <h3 class="font-heading text-lg font-semibold text-primary-900">Transparency</h3>
-            <p class="mt-2 text-sm text-primary-500">TODO: Describe this value.</p>
-          </div>
-          <div class="rounded-lg border border-primary-200 p-6">
-            <h3 class="font-heading text-lg font-semibold text-primary-900">Partnership</h3>
-            <p class="mt-2 text-sm text-primary-500">TODO: Describe this value.</p>
-          </div>
+          <div class="rounded-lg border border-primary-200 p-6 dark:border-primary-700"><h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Noytral by design</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Verktøyet tar ikke parti. Det viser tallene. Alle forutsetninger er synlige og justerbare.</p></div>
+          <div class="rounded-lg border border-primary-200 p-6 dark:border-primary-700"><h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Gratis for alle</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Arv er en familiesak. A sette en pris pa det ville ekskludere familiene som trenger det mest.</p></div>
+          <div class="rounded-lg border border-primary-200 p-6 dark:border-primary-700"><h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Norsk lov innebygd</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Pliktdelsarv, odelsrett og dokumentavgift er inkludert med automatiske advarsler nar regler brytes.</p></div>
+          <div class="rounded-lg border border-primary-200 p-6 dark:border-primary-700"><h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Lokalt forst</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Alle data forblir pa din enhet. Ingen data sendes til noen server. Du eier og kontrollerer all informasjon.</p></div>
         </div>
       </div>
     </section>
-
-    <StatsBar stats={stats} />
-
-    <CTABanner
-      headline="Want to work with us?"
-      ctaText="Get in Touch"
-      ctaHref="/contact"
-      variant="accent"
-    />
+    <CTABanner headline="Familier fortjener klarhet, ikke konflikt." ctaText="Start Planleggingen" ctaHref="/last-ned" variant="accent" />
   </main>
   <Footer />
 </BaseLayout>

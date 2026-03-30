@@ -3,74 +3,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
-import StatsBar from '../components/StatsBar.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 
-// TODO: Replace with brand-specific feature content
 const features = [
-  {
-    title: 'Feature One',
-    description: 'TODO: Describe your first key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-  {
-    title: 'Feature Two',
-    description: 'TODO: Describe your second key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-  {
-    title: 'Feature Three',
-    description: 'TODO: Describe your third key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>',
-  },
-  {
-    title: 'Feature Four',
-    description: 'TODO: Describe your fourth key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-];
-
-const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '10+', label: 'Years Experience' },
-  { value: '99%', label: 'Client Satisfaction' },
-  { value: '24/7', label: 'Support' },
+  { title: 'Veiviser for familieoppsettet', description: 'Legg inn arvinger, eiendommer, foreldre og andre verdier gjennom en 4-stegs veiviser. Tar 5 minutter.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: '5 fordelingsscenarioer', description: 'Sammenlign referanse, salg av alt, umiddelbar fordeling, utsatt indeksert oppgjor og trinnvis utbetaling side om side.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>' },
+  { title: 'Inflasjon og prisvekst', description: 'Se nominell vs. reell verdi over 5-20 ar. Forstatt hva et utsatt oppgjor faktisk koster den som venter.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Norsk arvelov innebygd', description: 'Pliktdelsarv (2/3-regelen), odelsrett og dokumentavgift er innebygd med advarsler nar regler brytes.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Del med familien', description: 'Eksporter til JSON og del noyaktig samme data med alle familiemedlemmer eller advokaten.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Noytral by design', description: 'Alle ser de samme tallene med de samme forutsetningene. Ingen skjulte beregninger.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>' },
 ];
 ---
-
-<BaseLayout
-  title="Home | Brand"
-  description="TODO: Write your homepage meta description. Keep it under 160 characters and include your primary keyword."
->
+<BaseLayout title="Arvesimulator: Se konsekvensene for familien bestemmer seg" description="Visuell arvesimulering for norske familier. Sammenlign 5 fordelingsmodeller, se inflasjonseffekter og pliktdelsarv. Gratis.">
   <Header />
+  <main id="main-content">
+    <Hero headline="Se hva hver arving faktisk far" subheadline="Sammenlign 5 fordelingsscenarioer side om side. Se hva inflasjon, prisvekst og tid gjor med fordelingen. Et noytral verktoy for hele familien." ctaText="Start Planleggingen" ctaHref="/last-ned" secondaryCtaText="Se et eksempel" secondaryCtaHref="/eksempel" variant="dark" />
 
-  <main>
-    <Hero
-      headline="We build products that solve real problems"
-      subheadline="TODO: Your value proposition here"
-      ctaText="See Our Work"
-      ctaHref="/portfolio"
-      secondaryCtaText="How We Work"
-      secondaryCtaHref="/process"
-      variant="dark"
-    />
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Eiendommene har ulik verdi. "En hver" er ikke rettferdig. Dere trenger tall.</h2>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Ulik eiendomsverdi</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Eiendommene har svaert ulik verdi. "En hver" er ikke rettferdig. Ingen vet hvordan man kompenserer forskjellen over tid.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Ingen felles tallgrunnlag</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Hver arving regner for seg. En lager et regneark de andre ikke stoler pa. Diskusjonen gar i ring uten felles fakta.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Inflasjon er usynlig</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Et utsatt oppgjor horest rettferdig ut i dag, men inflasjonen spiser verdien i det stille. Etter 15 ar er 1 million verdt noe helt annet.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Advokaten er dyr</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Advokatmoter koster 2000-4000 kr per time. Familier bruker dyre timer pa a utforske scenarioer de kunne ha forberedt pa forhand.</p>
+        </div>
+      </div>
+    </section>
 
-    <FeatureGrid
-      sectionTitle="What We Do"
-      sectionSubtitle="TODO: Brief summary of your core offerings"
-      features={features}
-    />
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center"><h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Slik fungerer det</h2></div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-3">
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-800 text-white font-heading font-bold text-lg">1</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Sett opp familien din</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Legg inn arvinger, eiendommer og foreldre gjennom en veiviser. Tar 5 minutter. Ingen oekonomisk kompetanse kreves.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-800 text-white font-heading font-bold text-lg">2</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Utforsk scenarioer</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Sammenlign 5 innebyggede fordelingsmodeller. Juster parametere som prisvekst, inflasjon og tidshorisont.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-800 text-white font-heading font-bold text-lg">3</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Se konsekvensene</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Visuelle diagrammer viser hver arvings del i nominelle og inflasjonsjusterte kroner, med juridiske advarsler for pliktdelsarv og odelsrett.</p></div>
+      </div>
+    </section>
 
-    <StatsBar stats={stats} />
+    <FeatureGrid sectionTitle="Slik fungerer det" sectionSubtitle="Sett opp familien, utforsk scenarioer, se konsekvensene" features={features} />
 
-    <CTABanner
-      headline="Ready to get started?"
-      ctaText="Get in Touch"
-      ctaHref="/contact"
-      variant="accent"
-    />
+    <section class="bg-primary-50 px-4 py-12 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl rounded-xl border-2 border-primary-300 bg-white p-8 text-center dark:border-primary-600 dark:bg-primary-900">
+        <h3 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Gratis</h3>
+        <p class="mt-2 text-primary-600 dark:text-primary-400">Hele Arvesimulator, gratis for alle norske familier.</p>
+        <p class="mt-4 text-xs text-primary-500">Gratis. Bygget pa norsk arvelov. Alle beregninger er transparente. Ikke juridisk radgivning.</p>
+        <a href="/last-ned" class="mt-6 inline-flex items-center rounded-md bg-primary-800 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-700">Start Planleggingen</a>
+      </div>
+    </section>
+
+    <CTABanner headline="Familier fortjener klarhet, ikke konflikt." ctaText="Start Planleggingen" ctaHref="/last-ned" variant="accent" />
   </main>
-
   <Footer />
 </BaseLayout>

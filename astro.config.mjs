@@ -6,8 +6,7 @@ import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 
 export default defineConfig({
   server: { port: 4019 },
-  // TODO: Update with your production URL
-  site: 'https://inheritr.com',
+  site: 'https://inheritr.halisonworks.com',
 
   integrations: [
     sitemap(),
@@ -25,12 +24,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  // Uncomment to enable i18n
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: ['en', 'nb'],
-  //   routing: {
-  //     prefixDefaultLocale: false,
-  //   },
-  // },
+  i18n: {
+    defaultLocale: 'nb',
+    locales: ['en', 'nb'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
