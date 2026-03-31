@@ -29,7 +29,7 @@ const organizationJsonLd = { '@context': 'https://schema.org', '@type': 'Organiz
     <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     {import.meta.env.PUBLIC_POSTHOG_KEY && (<script is:inline define:vars={{ phKey: import.meta.env.PUBLIC_POSTHOG_KEY }}>window.__POSTHOG_KEY = phKey;</script>)}
-    <PostHog />
+    <PostHog entity="Halisonworks" />
   </head>
   <body class="min-h-screen bg-white dark:bg-dark-bg">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary-700 focus:px-4 focus:py-2 focus:text-white focus:outline-none">Hopp til hovedinnhold</a>
